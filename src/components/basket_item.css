@@ -1,0 +1,80 @@
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+}
+html{
+	font-size:100%;
+}
+.basket_item{
+	border:1px solid #000;
+	display:flex;
+	flex-direction:row;
+	padding:.5rem;
+	background-color: #fff;
+	border-radius:5px;
+	margin:1rem;
+	position:relative;
+	width:95%;
+}
+.item_image{
+	width:100px;
+	height:100px;
+}
+.item_details{
+	display:flex;
+	flex-direction:column;
+	justify-content:space-around;
+	padding-left:1rem;
+	font-size:110%;
+}
+.products_numbers{
+	right:15%;
+	bottom:5%;
+	font-weight: bold;
+	border:1px solid #000;
+	background-color: #fff;
+}
+.circle{
+	position:absolute;
+	width:30px;
+	height:30px;
+	border-radius: 50%;
+	text-align:center;
+	display:grid;
+	align-items:center;
+	justify-items: center;
+}
+.close_button{
+	background-image: url("../assets/icons/icons8-macos-close-32.png");
+	right:3%;
+	bottom:75%;
+}
+.close_button:hover{
+	transform:scale(1.1);
+}
+.close_button:active{
+	transform:scale(.9);
+}
+.line{
+	position:absolute;
+	width:17px;
+	height:5px;
+	cursor:pointer;
+}
+.reduce_button{
+	right:27%;
+	bottom:13%;
+	background-color: #ec1d1d;
+}
+.line_one{
+	right:7%;
+	bottom:13%;
+	background-color: #1b42d0;
+}
+.line_two{
+	right:7%;
+	bottom:13%;
+	background-color: #1b42d0;
+	transform:rotate(90deg);
+}

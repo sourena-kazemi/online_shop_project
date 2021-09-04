@@ -1,0 +1,70 @@
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+}
+html{
+	font-size:100%;
+}
+.header{
+	display:grid;
+	grid-template-areas:"auto auto auto";
+	justify-items: center;
+	align-items: center;
+	margin-top:-10px;
+}
+.basket_button{
+	border:2px solid #000;
+	border-radius:10px;
+	padding:3px;
+	cursor:pointer;
+	background-color: #e2e2e2;
+	position:relative;
+	z-index:3;
+	transition:all .3s;
+}
+.basket_button:hover{
+	transform:scale(1.1);
+	background-color: #efefef;
+
+}
+.basket_button:active{
+	transform:scale(.9);
+	background-color: #c9c9c9;
+}
+.numbers_box{
+	position:absolute;
+	background-color: #fff;
+	width:25px;
+	height:25px;
+	right:-15%;
+	bottom:-15%;
+	border-radius: 50%;
+	border:1px solid #000;
+	text-align:center;
+	display:grid;
+	align-items:center;
+	justify-items: center;
+	font-weight: bold;
+}
+.search_input{
+	padding:5px 25px 5px 25px;
+	font-size:1rem;
+	background-image: url("../assets/icons/icons8-search-24.png");
+	background-repeat: no-repeat;
+	background-size: 20px;
+	background-position:5px center;
+	border-radius:10px;
+	outline: none;
+}
+.logo_box{
+	display:flex;
+	flex-direction: column;
+	justify-content:center;
+}
+.logo{
+	transform:scale(.8);
+}
+.logo_text{
+	font-weight: bold;
+}

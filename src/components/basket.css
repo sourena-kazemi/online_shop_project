@@ -1,0 +1,32 @@
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+}
+html{
+	font-size:100%;
+}
+.basket_box{
+	position:absolute;
+	border:1px solid #000;
+	background-color: #eeeeee;
+	left:-100%;
+	top:0;
+	height:100%;
+	overflow-y: auto;
+	transition:all .5s;
+	padding:0 1rem;
+	z-index:2;
+	width:25%;
+}
+.total{
+	font-weight:bold;
+	font-size:1.3rem;
+	margin:2rem 0 0 2rem;
+}
+.basket_items{
+	margin-top: 5rem;
+}
+.show_basket{
+	left:0;
+}
