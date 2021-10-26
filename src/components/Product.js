@@ -9,6 +9,20 @@ class Product extends React.Component {
 	addProductFunction=()=>{
 		this.props.addProductFunction(this.props);
 	}
+	checkProductPrice=()=>{
+		if(this.props.price==="Not Available"){
+			return "Not Available";
+		}else{
+			return `${this.props.price}$`;
+		}
+	}
+	productButtonClassName=()=>{
+		if(this.props.price!=="Not Available"){
+			return "buy_button";
+		}else{
+			return "buy_button none_display";
+		}
+	}
 	render(){
 		return (
 			<div className="product">
@@ -17,9 +31,9 @@ class Product extends React.Component {
 				</div>
 				<div className="product_details">
 					<p className="product_name">{this.props.name}</p>
-					<p className="product_price">{`${this.props.price}$`}</p>
+					<p className="product_price">{this.checkProductPrice()}</p>
 				</div>
-				<button className="buy_button" onClick={this.addProductFunction}>Add To Basket</button>
+				<button className={this.productButtonClassName()} onClick={this.addProductFunction}>Add To Basket</button>
 
 			</div>
 		);}

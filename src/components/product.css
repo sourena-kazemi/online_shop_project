@@ -9,7 +9,7 @@ html{
 .product{
 	display:flex;
 	flex-direction:column;
-	width:250px;
+	width:325px;
 	font-size:1.5em;
 	padding:2rem;
 	transition:all .3s;
@@ -38,4 +38,10 @@ html{
 	font-weight: bold;
 	outline:none;
 	border-radius: 10px;
+}
+.none_display{
+	display:none;
+}
+.product_price{
+	font-weight: bold;
 }

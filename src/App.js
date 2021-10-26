@@ -1,14 +1,17 @@
 import React from 'react';
 import Header from "./components/Header";
 import Products from "./components/Products";
-import './App.css';
+import "./App.css";
+import "./responsive.css";
 import Images from "./assets/images/index";
+import passwordsList from "./assets/passwords/passwords";
+import axios from "axios";
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state={
-            productsList:[
+            homePageProductsList:[
                 {
                     id:1,
                     name:"White TShirt",
@@ -199,23 +202,54 @@ class App extends React.Component {
     }
     searchFunction=(value)=>{
         let inputValue = String(value).trim().toLowerCase();
-        let copyOfProductsList = this.state.productsList;
-        let result = [];
-        this.setState({
-            searchResult:[]
-        })
-        for(let i=0;i < this.state.productsList.length;i++){
-            for(let j=0;j < this.state.productsList[i].category.length;j++){
-                if(copyOfProductsList[i].category[j].includes(value)){
-                    if(!result.includes(copyOfProductsList[i])){
-                        result.push(copyOfProductsList[i]);
-                    }
-                }
-            }
-            this.setState({
-                searchResult:result
-            })
+        let productsList = this.state.productsList;
+        let result=[];
+
+        //I use Rainforest API here.
+        const axios = require('axios');
+
+        // set up the request parameters
+        const params = {
+            api_key: passwordsList.rainforestapi,
+            type: "search",
+            amazon_domain: "amazon.com",
+            search_term: inputValue,
+            sort_by: "most_recent"
         }
+
+        // make the http GET request to Rainforest API
+        axios.get('https://api.rainforestapi.com/request', { params })
+            .then(response => {
+                productsList=response.data.search_results;
+                for(let i=0;i<productsList.length;i++){
+                    if(productsList[i].price){
+                        result.push({
+                            id:productsList[i].position,
+                            name:productsList[i].title,
+                            image:productsList[i].image,
+                            price:productsList[i].price.value,
+                        })
+                    }else{
+                        result.push({
+                            id:productsList[i].position,
+                            name:productsList[i].title,
+                            image:productsList[i].image,
+                            price:"Not Available",
+                        })
+                    }
+
+                }
+                this.setState({
+                    searchResult:[]
+                })
+                this.setState({
+                    searchResult:result
+                })
+            }).catch(error => {
+            // catch and print the error
+            console.log(error);
+        })
+
     }
 
   render(){

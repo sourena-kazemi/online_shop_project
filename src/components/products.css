@@ -9,6 +9,7 @@ html{
 .products_box{
 	display:grid;
 	grid-template-columns:repeat(4,auto);
-	grid-gap:1rem;
+	grid-gap:.5rem;
 	padding:1rem;
+	place-items: center;
 }

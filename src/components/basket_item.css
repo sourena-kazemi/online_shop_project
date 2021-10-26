@@ -18,15 +18,15 @@ html{
 	width:95%;
 }
 .item_image{
-	width:100px;
-	height:100px;
+	width:90px;
+	height:90px;
 }
 .item_details{
 	display:flex;
 	flex-direction:column;
 	justify-content:space-around;
-	padding-left:1rem;
-	font-size:110%;
+	padding:.5rem 0 0 1rem;
+	margin:.5rem;
 }
 .products_numbers{
 	right:15%;
@@ -77,4 +77,8 @@ html{
 	bottom:13%;
 	background-color: #1b42d0;
 	transform:rotate(90deg);
+}
+.item_price{
+	font-weight:bold;
+	padding-top: .2rem;
 }

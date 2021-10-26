@@ -10,13 +10,16 @@ html{
 	display:grid;
 	grid-template-areas:"auto auto auto";
 	justify-items: center;
+	justify-content: space-between;
 	align-items: center;
 	margin-top:-10px;
+	padding:0 5rem;
+	width: 100%;
 }
 .basket_button{
 	border:2px solid #000;
 	border-radius:10px;
-	padding:3px;
+	padding:.5rem;
 	cursor:pointer;
 	background-color: #e2e2e2;
 	position:relative;
@@ -48,7 +51,7 @@ html{
 	font-weight: bold;
 }
 .search_input{
-	padding:5px 25px 5px 25px;
+	padding:.5rem 1.5rem;
 	font-size:1rem;
 	background-image: url("../assets/icons/icons8-search-24.png");
 	background-repeat: no-repeat;
