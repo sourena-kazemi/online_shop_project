@@ -210,7 +210,7 @@ class App extends React.Component {
 
         // set up the request parameters
         const params = {
-            api_key: passwordsList.rainforestapi,
+            api_key: passwordsList.rainforestapi,//use your api key
             type: "search",
             amazon_domain: "amazon.com",
             search_term: inputValue,
