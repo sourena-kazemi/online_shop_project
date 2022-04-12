@@ -1,3 +1,7 @@
+#Running this site
+
+To run this website for yourself just put your rainforest api key in /src/assets/passwords/passwords.js
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
